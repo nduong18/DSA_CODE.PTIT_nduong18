@@ -1,1 +1,3 @@
-# dsa code ptit
+# DSA CODE PTIT
+# NGUYEN NGOC DUONG
+# D23CQCN11-B
