@@ -9,7 +9,6 @@ void sinh(int a[], int z){
         i--;
     }
     if (i != 0) a[i] = 1;
-
     for (int i = 1; i < z; i++) cout << a[i];
 }
 
