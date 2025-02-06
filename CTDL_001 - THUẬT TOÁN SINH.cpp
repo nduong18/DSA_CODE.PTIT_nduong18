@@ -24,23 +24,18 @@ void sinh(){
     else a[i] = 1;
 }
 
-int main()
-{
-   ktao();
-   cin >> n;
-   while (final == 0){
-
+int main(){
+    ktao();
+    cin >> n;
+    while (final == 0){
         string tmp = "";
-        for (int i = 1; i <= n; i++){
-            tmp += (a[i] + '0');
-        }
+        for (int i = 1; i <= n; i++) tmp += (a[i] + '0');
+        
         if (check(tmp)){
-            for (int i = 1; i <= n; i++){
-            cout << a[i] << ' ';
-            }
+            for (int i = 1; i <= n; i++) cout << a[i] << ' ';
             cout << "\n";
-        }   
+            sinh();
+        }
         sinh();
-   }
+    }
 }
-    
