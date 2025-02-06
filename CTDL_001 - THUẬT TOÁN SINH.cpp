@@ -25,8 +25,8 @@ void sinh(){
 }
 
 int main(){
-    ktao();
     cin >> n;
+    ktao();
     while (final == 0){
         string tmp = "";
         for (int i = 1; i <= n; i++) tmp += (a[i] + '0');
