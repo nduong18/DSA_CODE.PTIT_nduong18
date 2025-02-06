@@ -21,17 +21,21 @@ void sinh(){
 
 bool check(char a[], int n){
     if (n < 6) return false;
+
     if (a[1] != '8' || a[n] != '6') return false;
+    
     for (int i = 1; i <= n-1; i++){
         if (a[i] == a[i+1] && a[i] == '8'){
             return false;
         }
     }
+
     string tmp = "";
     for (int i = 1; i <= n; i++) tmp += a[i];
     string x = "6666";
     auto res = tmp.find(x);
     if (res != std::string::npos) return false;
+
     return true;
 }
 
