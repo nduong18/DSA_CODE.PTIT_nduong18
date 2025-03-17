@@ -1,27 +1,25 @@
 #include <bits/stdc++.h>
 #define ll long long
-#define mod 123456789
+#define mod 1000000007
 using namespace std;
+//Github: nduong18
 
-//2250 = 2*1000 + 250
-// 250 = 0*500 + 250
-// 250 = 1*200 + 50
-// 50 = 0*100 + 50
-// 50 = 1*50 + 0
-
-int tien[] = {1000,500,200,100,50,20,10,5,2,1};
+int dp[1000001];
 
 int main() {
     int t; cin >> t;
-    while (t--){
-        int n; cin >> n;
-        int money = 0;
-        int cnt = 0, idx = 0;
-        while(n){
-            cnt += n/tien[idx];
-            n = n%tien[idx];
-            idx++;
+    int coin[10] = {1,2,5,10,20,50,100,200,500,1000};
+    dp[0] = 0;
+    for (int i = 1; i < 1000001; i++){
+        dp[i] = 1e9;
+        for (int j = 0; j < 10; j++){
+            if (i >= coin[j]){
+                dp[i] = min(dp[i], dp[i - coin[j]]+1);
+            }
         }
-        cout << cnt << endl;
+    }
+    while(t--){
+        int n; cin >> n;
+        cout << dp[n] << endl;
     }
 }
