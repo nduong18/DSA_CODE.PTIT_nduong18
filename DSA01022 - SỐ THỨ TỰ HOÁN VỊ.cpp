@@ -1,53 +1,29 @@
 #include <bits/stdc++.h>
-#define ll long long
 using namespace std;
-//GITHUB: nduong18
 
-int n, a[100], final = 0;
+int main() {
+    cin.tie(0) -> sync_with_stdio(0);
 
-void ktao(){
-    for (int i = 1; i <= n; i++) a[i] = i;
-}
+    int t; cin >> t;
+    while (t--){
+        int n; cin >> n;
+        vector <int> a(n);
+        vector <int> base(n);
 
-void sinh(){
-   int i = n-1;
-   while (a[i] > a[i+1] && i >= 1){
-        i--;
-   }
-   if (i == 0) final = 1;
-   else{
-        int j = n;
-        while (a[i] > a[j]) j--;
-        swap(a[i],a[j]);
-        reverse(a+i+1,a+n+1);
-   }
-}
+        for (int i = 0; i < n; i++){
+            cin >> a[i];
+            base[i] = i+1;
+        }
 
-int main(){
-   int t; cin >> t;
-   while (t--){
-        cin >> n;
-        ktao();
-        int x[n];
-        for (int i = 1; i <= n; i++) cin >> x[i];
-        
-        int cnt = 0;
-        while (final == 0){
-            cnt++;
-            bool check = true;
-            for (int i = 1; i <= n; i++){
-                if (x[i] != a[i]){
-                    check = false;
-                    break;
-                }
-            }
-            if (check){
-                cout << cnt << endl;
+        int cnt = 1;
+        do {
+            if (base == a){
+                cout << cnt << '\n';
                 break;
             }
-            sinh();
-        }
-        final = 0;
-   }
-}
+            else cnt++;
+        } while (next_permutation(base.begin(), base.end()));
+    }
 
+    return 0;
+}
